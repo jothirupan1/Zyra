@@ -10,7 +10,7 @@ function Navbar() {
   const navigate = useNavigate();
   const { darkMode, toggleTheme } = useContext(ThemeContext); 
 
-  const [search, setSearch] = useState("");
+ 
 
   const handlelogout = () => {
     localStorage.clear();

@@ -12,7 +12,7 @@ const AdminOrders = () => {
   const fetchOrders = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:3004/admin/orders", {
+      const res = await axios.get("https://zyra-7ccl.onrender.com/admin/orders", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setOrders(res.data);
@@ -27,7 +27,7 @@ const AdminOrders = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.patch(
-        `http://localhost:3004/admin/order/${orderId}/status`,
+        `https://zyra-7ccl.onrender.com/admin/order/${orderId}/status`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );

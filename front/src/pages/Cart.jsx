@@ -14,7 +14,7 @@ const Cart = () => {
   const fetchCart = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:3004/cart", {
+      const res = await axios.get("https://zyra-7ccl.onrender.com/cart", {
         headers: { Authorization: `Bearer ${token}` },  // ✅ fixed brackets
       });
       setCart(res.data.items || []); // ✅ must match backend `{ items: [...] }`
@@ -29,7 +29,7 @@ const Cart = () => {
   const handleRemove = async (productId) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:3004/cart/${productId}`, {
+      await axios.delete(`https://zyra-7ccl.onrender.com/cart/${productId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCart((prev) => prev.filter((i) => i.productId._id !== productId));

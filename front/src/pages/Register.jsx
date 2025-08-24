@@ -17,7 +17,7 @@ function Register() {
     e.preventDefault();
 
     try{
-      await axios.post("http://localhost:3004/register",
+      await axios.post("https://zyra-7ccl.onrender.com/register",
         {
           name,
           email,

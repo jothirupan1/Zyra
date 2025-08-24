@@ -20,7 +20,7 @@ function ProductDetail() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:3004/products/${id}`);
+        const res = await axios.get(`https://zyra-7ccl.onrender.com/products/${id}`);
         setProduct(res.data);
       } catch (err) {
         console.error("Error fetching product:", err);
@@ -35,7 +35,7 @@ function ProductDetail() {
     const fetchReviews = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3004/product/${id}/review`,
+          `https://zyra-7ccl.onrender.com/product/${id}/review`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setReviews(response.data.reviews);
@@ -53,7 +53,7 @@ function ProductDetail() {
     }
     try {
       await axios.post(
-        "http://localhost:3004/cart",
+        "https://zyra-7ccl.onrender.com/cart",
         { productId: id, quantity, size },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -80,7 +80,7 @@ function ProductDetail() {
     }
     try {
       const response = await axios.post(
-        `http://localhost:3004/product/${id}/review`,
+        `https://zyra-7ccl.onrender.com/product/${id}/review`,
         { rating, comment },
         { headers: { Authorization: `Bearer ${token}` } }
       );

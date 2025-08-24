@@ -15,9 +15,9 @@ function Product() {
     const fetchProducts = async () => {
       setLoading(true); // start loading
       try {
-        let url = "http://localhost:3004/products";
+        let url = "https://zyra-7ccl.onrender.com/products";
         if (category) {
-          url = `http://localhost:3004/products/category/${category}`;
+          url = `https://zyra-7ccl.onrender.com/products/category/${category}`;
         }
 
         const res = await axios.get(url);

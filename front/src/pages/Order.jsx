@@ -36,7 +36,7 @@ function Order() {
         }
 
         if (id) {
-          const res = await axios.get(`http://localhost:3004/products/${id}`, {
+          const res = await axios.get(`https://zyra-7ccl.onrender.com/products/${id}`, {
             headers: { Authorization: `Bearer ${token}` }
           });
 
@@ -48,7 +48,7 @@ function Order() {
           setCart([{ productId: res.data, quantity: qty, size }]);
         } else {
          
-          const res = await axios.get("http://localhost:3004/cart", {
+          const res = await axios.get("https://zyra-7ccl.onrender.com/cart", {
             headers: { Authorization: `Bearer ${token}` }
           });
           setCart(res.data.items || []); 
@@ -86,7 +86,7 @@ const handleOrder = async (e) => {
       });
 
       await axios.post(
-        "http://localhost:3004/order/direct",
+        "https://zyra-7ccl.onrender.com/order/direct",
         {
           item: formattedItems,
           address,
@@ -102,7 +102,7 @@ const handleOrder = async (e) => {
       });
 
       await axios.post(
-        "http://localhost:3004/cart/order",
+        "https://zyra-7ccl.onrender.com/cart/order",
         {
           address,
           paymentMethod,

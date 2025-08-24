@@ -7,7 +7,7 @@ function MyOrders() {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get("http://localhost:3004/myorders", {
+      const res = await axios.get("https://zyra-7ccl.onrender.com/myorders", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setOrders(res.data);

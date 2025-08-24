@@ -28,7 +28,7 @@ const SellerDashboard = () => {
   const fetchProducts = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:3004/products/seller/mine", {
+      const res = await axios.get("https://zyra-7ccl.onrender.com/products/seller/mine", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProducts(res.data);
@@ -66,7 +66,7 @@ const SellerDashboard = () => {
 
     try {
       const token = localStorage.getItem("token");
-      await axios.post("http://localhost:3004/products", formData, {
+      await axios.post("https://zyra-7ccl.onrender.com/products", formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("Product created successfully");

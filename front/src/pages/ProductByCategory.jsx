@@ -10,7 +10,7 @@ function ProductByCategory() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get(`http://localhost:3004/products/category/${category}`);
+        const res = await axios.get(`https://zyra-7ccl.onrender.com/products/category/${category}`);
         setProducts(res.data);
       } catch (err) {
         console.error(err);
