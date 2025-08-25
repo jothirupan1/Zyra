@@ -223,7 +223,6 @@ const handleOrder = async (e) => {
             onChange={(e) => setPaymentMethod(e.target.value)}
           >
             <option value="COD">Cash on Delivery</option>
-            <option value="Card">Credit/Debit Card</option>
           </select>
         </div>
 
